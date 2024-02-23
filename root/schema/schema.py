@@ -29,3 +29,7 @@ class ColumnSchema(BaseModel):
 class TableSchema(BaseModel):
     tbl_name:str
     column:list[ColumnSchema]
+    
+    
+class Insert_data(BaseModel):   
+    items:dict  

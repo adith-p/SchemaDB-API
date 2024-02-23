@@ -1,16 +1,5 @@
-from sqlalchemy import Text
 from schema.schema import TableSchema
 
-# we will have 4 functions
-"""
-any 
-
-int
-str
-TIMESTAMP 
-date_of_birth DATE, date_of_birth TIME, height FLOAT, active BOOL
-
-"""
 
 def sql_ist(col):
     if col.dtype == 'int':
