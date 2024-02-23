@@ -31,7 +31,7 @@ def fetch_table(table_name:str, limit: int = 10, offset: int = 1,db: Session = D
     
 
     if does_table_exist(table_name): # check if the table exist
-        sql = db.execute(text(f' SELECT * FROM "db.{table_name}" LIMIT :limit OFFSET :offset'),{'limit':limit,'offset':offset})
+        sql = db.execute(text(f' SELECT * FROM "{table_name}" LIMIT :limit OFFSET :offset'),{'limit':limit,'offset':offset})
         result = sql.all()    
         serialized_data = dynamic_serialization(sql, result)
         
