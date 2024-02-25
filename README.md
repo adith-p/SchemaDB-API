@@ -1,6 +1,6 @@
 #  SchemaDB API
 
-This repository provides an API interface to access a database with real-time CRUD.
+This repository provides an API interface to access any psql database with real-time CRUD.
 
 ## Overview
 
