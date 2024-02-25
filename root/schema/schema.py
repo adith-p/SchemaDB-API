@@ -33,3 +33,14 @@ class TableSchema(BaseModel):
     
 class Insert_data(BaseModel):   
     items:dict  
+    
+    
+class Schema_data(BaseModel):
+    tbl_name:str
+    column:list[dict]
+    
+    
+class Search_data(BaseModel):
+    col_name:str
+    ilike:bool = True
+    search_value:str

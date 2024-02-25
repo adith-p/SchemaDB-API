@@ -1,4 +1,4 @@
-from schema.schema import TableSchema
+from schema.schema import Search_data, TableSchema
 
 
 def sql_ist(col):
@@ -65,4 +65,7 @@ def create_sql(request:TableSchema):
         sql += ','
     return sql[:-1] +')'
 
-
+def search_sql(table_name:str,search_data:Search_data):
+    # select * from table_name where col_name (ilike) or (like) '%search_value%'
+    sql = f" SELECT * FROM \"{table_name}\" WHERE \"{search_data.col_name}\" {'ilike' if search_data.ilike else 'like'} '%{search_data.search_value}%'"
+    return sql
