@@ -1,6 +1,6 @@
 #  SchemaDB API
 
-This repository provides an API interface to access a database with real-time table creation, updating, and data insertion functionalities.
+This repository provides an API interface to access a database with real-time CRUD.
 
 ## Overview
 
