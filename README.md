@@ -1,4 +1,4 @@
-#  SchemaDB API
+# SchemaDB API
 
 This repository provides an API interface to access any psql database with real-time CRUD.
 
@@ -10,7 +10,7 @@ The SchemaDB API allows users to interact with a database through a set of defin
 
 - **Real-time CRUD**: Tables are created dynamically as needed based on user requests.
 - **Real-time Data Manipulation**: Perform CRUD (Create, Read, Update, Delete) operations on the database in real-time, enabling instant data changes and updates.
--  **Schema Information Endpoint**: Retrieve schema information for the database, including tables, columns, and data types.
+- **Schema Information Endpoint**: Retrieve schema information for the database, including tables, columns, and data types.
 - **RESTful API**: The API follows REST principles for easy integration and usage.
 - **Error Handling**: Comprehensive error handling to provide informative responses.
 
@@ -37,4 +37,5 @@ To install and use the Realtime Database API, follow these steps:
     ```
     uvicorn main:app
     ```
+
 Note: ```pushing code every day```
