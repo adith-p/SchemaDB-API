@@ -33,6 +33,9 @@ class TableSchema(BaseModel):
     
 class Insert_data(BaseModel):   
     items:dict  
+
+class Bulk_insert(BaseModel):
+    items:list[dict]
     
     
 class Schema_data(BaseModel):
