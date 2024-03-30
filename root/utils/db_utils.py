@@ -4,13 +4,15 @@ from databases.database import engine
 
 
 def does_table_exist(table_name):
+
     return inspect(engine).has_table(table_name)
 
 
 def table_schema(table_name):
     inspector = inspect(engine)
     columns = inspector.get_columns(table_name)
-    return{'Schema':columns}
+    return columns
+
 
 
 def dynamic_serialization(sql, result): 
@@ -22,6 +24,7 @@ def dynamic_serialization(sql, result):
     return serialized_data
 
 def schema_serialization(schema):
+    schema = {'Schema':schema}
     serialized_data = []
     s_svalues = []
     for i in schema['Schema']:

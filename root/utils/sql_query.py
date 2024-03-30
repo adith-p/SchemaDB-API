@@ -1,5 +1,6 @@
-from schema.schema import Search_data, TableSchema,Bulk_insert
+from schema.schema import Search_data, TableSchema,Bulk_insert,Join_data
 from .db_utils import table_schema
+from fastapi.responses import JSONResponse
 
 def sql_ist(col):
     if col.dtype == 'int':
@@ -101,3 +102,25 @@ def bulk_create(table_name: str, bulk_insert: Bulk_insert):
         sql += "),"
         values = []
     return sql[:-1] + f' RETURNING {table_schema(table_name).get('Schema')[0]['name']}'
+
+def join_table(join_data:Join_data):
+  
+    
+    
+    table_name = join_data.table_name
+    join_table_name = join_data.join_table_name
+    join_type = join_data.join_type
+    table_pk = join_data.table_name_col
+    join_table_pk = join_data.join_table_name_col   
+    
+    if join_type == 'full':
+        join_type = 'FULL OUTER'
+    
+    sql = f"""
+        SELECT * 
+        FROM {table_name}
+        {join_type.upper()} JOIN {join_table_name} 
+        ON {table_name}.{table_pk} = {join_table_name}.{join_table_pk}
+    """
+    
+    return sql

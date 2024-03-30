@@ -47,3 +47,10 @@ class Search_data(BaseModel):
     col_name:str
     ilike:bool = True
     search_value:str
+    
+class Join_data(BaseModel):
+    table_name:str
+    join_table_name:str
+    join_type:Literal['left','right','inner','full'] = 'inner'
+    table_name_col:str
+    join_table_name_col:str
