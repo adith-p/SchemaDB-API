@@ -4,7 +4,7 @@ from databases.database import engine
 
 
 def does_table_exist(table_name):
-    
+
     return inspect(engine).has_table(table_name)
 
 
